@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <context-param>
+        <param-name>mail.smtp.host</param-name>
+        <param-value>smtp.yandex.ru</param-value>
+    </context-param>
+    <context-param>
+        <param-name>mail.smtp.port</param-name>
+        <param-value>465</param-value>
+    </context-param>
+    <context-param>
+        <param-name>mail.smtp.ssl.enabled</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>mail.smtp.auth</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>mail.from</param-name>
+        <param-value></param-value>
+    </context-param>
+    <context-param>
+        <param-name>mail.user</param-name>
+        <param-value></param-value>
+    </context-param>
+    <context-param>
+        <param-name>mail.password</param-name>
+        <param-value></param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>Mailer</servlet-name>
+        <servlet-class>org.eustrosoft.MailerServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Mailer</servlet-name>
+        <url-pattern>/send</url-pattern>
+    </servlet-mapping>
+</web-app>
