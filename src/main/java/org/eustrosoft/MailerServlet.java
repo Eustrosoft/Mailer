@@ -70,8 +70,10 @@ public class MailerServlet extends HttpServlet {
                 );
             }
             mailMessage.send(mailMessage.buildMessage(session));
+            response.setStatus(200);
             response.getWriter().write(MSG_MAIL_SENT);
         } catch (Exception mex) {
+            response.setStatus(400);
             response.getWriter().write(String.format(MSG_MAIL_SEND_ERROR, mex.getLocalizedMessage()));
         }
         response.getWriter().flush();
